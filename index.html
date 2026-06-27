@@ -533,9 +533,14 @@ function applyRoleUI(){
 
 /* ═══ HELPERS ═══ */
 function excelDateToISO(n){if(!n||isNaN(n))return'';var d=new Date((n-25569)*86400*1000);return d.toISOString().split('T')[0];}
-function formatDate(iso){if(!iso)return'-';var p=iso.split('-');return p[2]+'/'+p[1]+'/'+p[0];}
+function formatDate(iso){
+  if(!iso||iso==='undefined'||iso==='null')return'-';
+  var p=String(iso).split('T')[0].split('-');
+  if(p.length!==3||!p[0]||!p[1]||!p[2])return'-';
+  return p[2]+'/'+p[1]+'/'+p[0];
+}
 function calcAge(iso){
-  if(!iso)return null;
+  if(!iso||iso==='undefined'||iso==='null')return null;
   var s=new Date(iso);if(isNaN(s.getTime()))return null;
   var diff=Math.floor((new Date()-s)/(864e5));return diff<0?0:diff;
 }
