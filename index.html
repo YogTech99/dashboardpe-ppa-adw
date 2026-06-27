@@ -350,7 +350,7 @@ tbody td{padding:10px;vertical-align:top;font-size:12.5px;overflow:hidden;}
         Export
       </button>
       <button class="btn-add" id="btn-add" onclick="openAddModal()">+ Tambah</button>
-      <button class="btn-logout" onclick="openModal('logout-modal')">
+      <button class="btn-logout" onclick=\"openModal(&apos;logout-modal&apos;)\">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
         Keluar
       </button>
@@ -379,17 +379,17 @@ tbody td{padding:10px;vertical-align:top;font-size:12.5px;overflow:hidden;}
     <table>
       <colgroup><col class="c-no"><col class="c-base"><col class="c-by"><col class="c-date"><col class="c-age"><col class="c-unit"><col class="c-problem"><col class="c-action"><col class="c-pic"><col class="c-section"><col class="c-progress"><col class="c-status"><col class="c-aksi"></colgroup>
       <thead><tr>
-        <th onclick="sortBy('no')">No <span class="sa">&#8597;</span></th>
-        <th onclick="sortBy('base')">Base <span class="sa">&#8597;</span></th>
-        <th onclick="sortBy('issuedBy')">Issued By <span class="sa">&#8597;</span></th>
-        <th onclick="sortBy('issuedDate')">Tgl Issue <span class="sa">&#8597;</span></th>
-        <th onclick="sortBy('age')" title="Hari berjalan">Hari <span class="sa">&#8597;</span></th>
-        <th onclick="sortBy('unitCode')">Unit <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;no&apos;)\">No <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;base&apos;)\">Base <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;issuedBy&apos;)\">Issued By <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;issuedDate&apos;)\">Tgl Issue <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;age&apos;)\" title="Hari berjalan">Hari <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;unitCode&apos;)\">Unit <span class="sa">&#8597;</span></th>
         <th>Problem</th><th>Action</th>
-        <th onclick="sortBy('pic')">PIC <span class="sa">&#8597;</span></th>
-        <th onclick="sortBy('section')">Section <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;pic&apos;)\">PIC <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;section&apos;)\">Section <span class="sa">&#8597;</span></th>
         <th>Progress</th>
-        <th onclick="sortBy('status')">Status <span class="sa">&#8597;</span></th>
+        <th onclick=\"sortBy(&apos;status&apos;)\">Status <span class="sa">&#8597;</span></th>
         <th>Aksi</th>
       </tr></thead>
       <tbody id="table-body"></tbody>
@@ -406,7 +406,7 @@ tbody td{padding:10px;vertical-align:top;font-size:12.5px;overflow:hidden;}
   <!-- MODALS -->
   <div class="modal-overlay" id="edit-modal">
     <div class="modal">
-      <div class="modal-header"><div class="modal-title" id="modal-title">Tambah Issue</div><button class="modal-close" onclick="closeModal('edit-modal')">&#215;</button></div>
+      <div class="modal-header"><div class="modal-title" id="modal-title">Tambah Issue</div><button class="modal-close" onclick=\"closeModal(&apos;edit-modal&apos;)\">&#215;</button></div>
       <div class="modal-body"><div class="form-grid">
         <div class="form-group"><label class="form-label">Base On</label>
           <select class="form-select" id="f-base">
@@ -433,23 +433,23 @@ tbody td{padding:10px;vertical-align:top;font-size:12.5px;overflow:hidden;}
         <div class="form-group"><label class="form-label">End Date</label><input class="form-input" id="f-end" type="date"></div>
         <div class="form-group full"><label class="form-label">Remarks</label><textarea class="form-textarea" id="f-remarks" placeholder="Catatan tambahan..." rows="3"></textarea></div>
       </div></div>
-      <div class="modal-footer"><button class="btn-cancel" onclick="closeModal('edit-modal')">Batal</button><button class="btn-save" onclick="saveIssue()">Simpan</button></div>
+      <div class="modal-footer"><button class="btn-cancel" onclick=\"closeModal(&apos;edit-modal&apos;)\">Batal</button><button class="btn-save" onclick="saveIssue()">Simpan</button></div>
     </div>
   </div>
   <div class="modal-overlay" id="detail-modal">
-    <div class="modal"><div class="modal-header"><div class="modal-title">Detail Issue</div><button class="modal-close" onclick="closeModal('detail-modal')">&#215;</button></div>
+    <div class="modal"><div class="modal-header"><div class="modal-title">Detail Issue</div><button class="modal-close" onclick=\"closeModal(&apos;detail-modal&apos;)\">&#215;</button></div>
     <div class="modal-body" id="detail-body"></div>
-    <div class="modal-footer"><button class="btn-cancel" onclick="closeModal('detail-modal')">Tutup</button></div></div>
+    <div class="modal-footer"><button class="btn-cancel" onclick=\"closeModal(&apos;detail-modal&apos;)\">Tutup</button></div></div>
   </div>
   <div class="modal-overlay" id="confirm-modal">
-    <div class="modal modal-sm"><div class="modal-header"><div class="modal-title">Hapus Issue?</div><button class="modal-close" onclick="closeModal('confirm-modal')">&#215;</button></div>
+    <div class="modal modal-sm"><div class="modal-header"><div class="modal-title">Hapus Issue?</div><button class="modal-close" onclick=\"closeModal(&apos;confirm-modal&apos;)\">&#215;</button></div>
     <div class="modal-body"><p class="confirm-msg">Issue ini akan dihapus permanen dan tidak bisa dikembalikan.</p></div>
-    <div class="modal-footer"><button class="btn-cancel" onclick="closeModal('confirm-modal')">Batal</button><button class="btn-danger" onclick="confirmDelete()">Hapus</button></div></div>
+    <div class="modal-footer"><button class="btn-cancel" onclick=\"closeModal(&apos;confirm-modal&apos;)\">Batal</button><button class="btn-danger" onclick="confirmDelete()">Hapus</button></div></div>
   </div>
   <div class="modal-overlay" id="logout-modal">
-    <div class="modal modal-sm"><div class="modal-header"><div class="modal-title">Konfirmasi Logout</div><button class="modal-close" onclick="closeModal('logout-modal')">&#215;</button></div>
+    <div class="modal modal-sm"><div class="modal-header"><div class="modal-title">Konfirmasi Logout</div><button class="modal-close" onclick=\"closeModal(&apos;logout-modal&apos;)\">&#215;</button></div>
     <div class="modal-body"><p class="confirm-msg">Yakin ingin keluar? Semua data tetap tersimpan dengan aman.</p></div>
-    <div class="modal-footer"><button class="btn-cancel" onclick="closeModal('logout-modal')">Batal</button><button class="btn-danger" onclick="doLogout()">Ya, Logout</button></div></div>
+    <div class="modal-footer"><button class="btn-cancel" onclick=\"closeModal(&apos;logout-modal&apos;)\">Batal</button><button class="btn-danger" onclick="doLogout()">Ya, Logout</button></div></div>
   </div>
 </div>
 
@@ -616,21 +616,39 @@ function save(){/* no-op: data langsung ke Sheets */}
 function renderStats(){
   var total=issues.length,open=0,cont=0,close=0;
   issues.forEach(function(i){if(i.status==='OPEN')open++;else if(i.status==='CONTINUE')cont++;else close++;});
-  document.getElementById('stats-bar').innerHTML=
-    '<div class="stat-card all '+(filterStatus==='all'?'active':'')+'" onclick="setStatusFilter('all')"><div class="stat-label">Total Issue</div><div class="stat-number">'+total+'</div><div class="stat-pct">Semua kategori</div></div>'+
-    '<div class="stat-card open '+(filterStatus==='OPEN'?'active':'')+'" onclick="setStatusFilter('OPEN')"><div class="stat-label">Open</div><div class="stat-number">'+open+'</div><div class="stat-pct">'+(total?Math.round(open/total*100):0)+'% dari total</div></div>'+
-    '<div class="stat-card continue '+(filterStatus==='CONTINUE'?'active':'')+'" onclick="setStatusFilter('CONTINUE')"><div class="stat-label">Continue</div><div class="stat-number">'+cont+'</div><div class="stat-pct">'+(total?Math.round(cont/total*100):0)+'% dari total</div></div>'+
-    '<div class="stat-card close '+(filterStatus==='CLOSE'?'active':'')+'" onclick="setStatusFilter('CLOSE')"><div class="stat-label">Close</div><div class="stat-number">'+close+'</div><div class="stat-pct">'+(total?Math.round(close/total*100):0)+'% dari total</div></div>';
+  var bar=document.getElementById('stats-bar');
+  bar.innerHTML='';
+  var cards=[
+    {cls:'all',label:'Total Issue',num:total,pct:'Semua kategori',fs:filterStatus==='all'},
+    {cls:'open',label:'Open',num:open,pct:Math.round(open/(total||1)*100)+'% dari total',fs:filterStatus==='OPEN'},
+    {cls:'continue',label:'Continue',num:cont,pct:Math.round(cont/(total||1)*100)+'% dari total',fs:filterStatus==='CONTINUE'},
+    {cls:'close',label:'Close',num:close,pct:Math.round(close/(total||1)*100)+'% dari total',fs:filterStatus==='CLOSE'}
+  ];
+  var status_map={all:'all',open:'OPEN',continue:'CONTINUE',close:'CLOSE'};
+  cards.forEach(function(c){
+    var div=document.createElement('div');
+    div.className='stat-card '+c.cls+(c.fs?' active':'');
+    div.innerHTML='<div class="stat-label">'+c.label+'</div><div class="stat-number">'+c.num+'</div><div class="stat-pct">'+c.pct+'</div>';
+    div.onclick=function(){setStatusFilter(status_map[c.cls]);};
+    bar.appendChild(div);
+  });
 }
 function setStatusFilter(s){filterStatus=s;renderStats();renderTable();}
 function renderSectionFilter(){
   var secs=['all'];
   issues.forEach(function(i){if(i.section&&secs.indexOf(i.section)<0)secs.push(i.section);});
   var labels={all:'Semua Section',TRACK:'Track',WHEEL:'Wheel',PE:'PE',SUPPORT:'Support',AUXILIARY:'Auxiliary',FABRIKASI:'Fabrikasi',PLANER:'Planer'};
-  document.getElementById('section-filter').innerHTML=secs.map(function(s){
-    var cls=s==='all'?'':s.toLowerCase(),act=filterSection===s?'active':'';
-    return'<button class="section-pill '+cls+' '+act+'" onclick="setSection(''+s+'')">'+( labels[s]||s)+'</button>';
-  }).join('');
+  var wrap=document.getElementById('section-filter');
+  wrap.innerHTML='';
+  secs.forEach(function(s){
+    var btn=document.createElement('button');
+    var cls=s==='all'?'':s.toLowerCase();
+    var act=filterSection===s?' active':'';
+    btn.className='section-pill '+cls+act;
+    btn.textContent=labels[s]||s;
+    btn.onclick=function(){setSection(s);};
+    wrap.appendChild(btn);
+  });
 }
 function setSection(s){filterSection=s;renderSectionFilter();renderTable();}
 function renderBaseFilter(){
